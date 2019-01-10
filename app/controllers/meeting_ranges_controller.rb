@@ -1,0 +1,2 @@
+class MeetingsRangeController < ApplicationController
+end
