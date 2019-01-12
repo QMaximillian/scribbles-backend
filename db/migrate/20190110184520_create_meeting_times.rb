@@ -4,8 +4,8 @@ class CreateMeetingTimes < ActiveRecord::Migration[5.2]
       t.integer :meeting_range_id, optional: true
       t.integer :user_id, optional: true
       t.date :day
-      t.time :begin_time
-      t.time :end_time
+      t.datetime :begin_time
+      t.datetime :end_time
 
       t.timestamps
     end

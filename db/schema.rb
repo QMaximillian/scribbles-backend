@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2019_01_10_184520) do
     t.integer "meeting_range_id"
     t.integer "user_id"
     t.date "day"
-    t.time "begin_time"
-    t.time "end_time"
+    t.datetime "begin_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2019_01_10_184520) do
   create_table "users", force: :cascade do |t|
     t.string "email", limit: 35
     t.integer "meeting_range_id"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
