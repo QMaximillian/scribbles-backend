@@ -7,7 +7,6 @@ class MeetingTimesController < ApplicationController
   end
 
   def create
-    byebug
     @meeting_times = MeetingTime.create(meeting_times_params)
 
     if @meeting_times.valid?

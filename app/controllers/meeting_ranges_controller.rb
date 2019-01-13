@@ -6,8 +6,13 @@ class MeetingRangesController < ApplicationController
     render json: @meeting_ranges
   end
 
+  def show
+    @meeting_range = MeetingRange.find(params[:id])
+
+    render json: {meeting_range: @meeting_range, meeting_time: @meeting_range.meeting_times, users: @meeting_range.users}
+  end
+
   def create
-    byebug
     @meeting_range = MeetingRange.create(meeting_range_params)
 
     if @meeting_range.valid?
