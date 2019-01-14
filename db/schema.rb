@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_184520) do
     t.date "end_date"
     t.time "cut_off_early"
     t.time "cut_off_late"
+    t.integer "interval"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_184520) do
     t.date "day"
     t.datetime "begin_time"
     t.datetime "end_time"
+    t.boolean "affirmative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

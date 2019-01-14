@@ -6,6 +6,7 @@ class CreateMeetingTimes < ActiveRecord::Migration[5.2]
       t.date :day
       t.datetime :begin_time
       t.datetime :end_time
+      t.boolean :affirmative, optional: true
 
       t.timestamps
     end
