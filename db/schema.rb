@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_175913) do
   create_table "meeting_ranges", force: :cascade do |t|
     t.date "begin_date"
     t.date "end_date"
+    t.date "end_poll"
     t.time "cut_off_early"
     t.time "cut_off_late"
     t.integer "interval"

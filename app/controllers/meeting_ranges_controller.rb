@@ -27,6 +27,6 @@ class MeetingRangesController < ApplicationController
   private
 
   def meeting_range_params
-    params.require(:meeting_range).permit(:begin_date, :end_date, :cut_off_early, :cut_off_late, :interval)
+    params.require(:meeting_range).permit(:begin_date, :end_date, :cut_off_early, :cut_off_late, :interval, :end_poll)
   end
 end
