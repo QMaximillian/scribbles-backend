@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
 
-    render json: @user, status: :ok
+    render json: @user.format, status: :ok
   end
   #
   # # POST /users
@@ -35,11 +35,11 @@ class UsersController < ApplicationController
   #
   # # PATCH/PUT /users/1
   def update
-    set_user
+    set_user_by_email
     if @user && @user.update(user_params)
       render json: @user, status: :ok
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {message: "You have not been invited to this poll"}, status: :unprocessable_entity
     end
   end
   #
@@ -55,9 +55,13 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def set_user_by_email
+      @user = User.find(params[:email])
+    end
+
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :meeting_range_id)
+      params.require(:user).permit(:first_name, :last_name, :email, :meeting_range_id, :admin)
     end
 
 end

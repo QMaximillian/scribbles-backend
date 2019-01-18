@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :meeting_range_id
       t.string :first_name
       t.string :last_name
+      t.boolean :admin
 
       t.timestamps
     end

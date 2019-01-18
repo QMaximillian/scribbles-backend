@@ -9,7 +9,7 @@ class MeetingRangesController < ApplicationController
   def show
     @meeting_range = MeetingRange.find(params[:id])
 
-    render json: {meeting_range: @meeting_range, meeting_time: @meeting_range.meeting_times, users: @meeting_range.users}
+    render json: {meeting_range: @meeting_range, meeting_time: @meeting_range.meeting_times, user_ids: @meeting_range.users.ids, users: @meeting_range.users}
   end
 
   def create
@@ -25,7 +25,7 @@ class MeetingRangesController < ApplicationController
   end
 
   private
-  
+
   def meeting_range_params
     params.require(:meeting_range).permit(:begin_date, :end_date, :cut_off_early, :cut_off_late, :interval)
   end
