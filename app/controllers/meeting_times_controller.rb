@@ -18,7 +18,7 @@ class MeetingTimesController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def meeting_times_params
     params.require(:meeting_time).permit(:meeting_range_id, :user_id, :day, :begin_time, :end_time, :affirmative)

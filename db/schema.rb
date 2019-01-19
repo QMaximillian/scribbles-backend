@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_175913) do
     t.time "cut_off_early"
     t.time "cut_off_late"
     t.integer "interval"
+    t.datetime "final_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

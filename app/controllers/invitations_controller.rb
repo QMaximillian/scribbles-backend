@@ -1,7 +1,6 @@
 class InvitationsController < ApplicationController
 
   def create
-    byebug
 
     @invitation = Invitation.new(invitation_params)
 

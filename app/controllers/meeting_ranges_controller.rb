@@ -12,6 +12,17 @@ class MeetingRangesController < ApplicationController
     render json: {meeting_range: @meeting_range, meeting_time: @meeting_range.meeting_times, user_ids: @meeting_range.users.ids, users: @meeting_range.users}
   end
 
+  def update
+    @meeting_range = MeetingRange.find(params[:id])
+
+    if @meeting_range && @meeting_range.update(meeting_range_params)
+      render json: @meeting_range
+    else
+      render json: {message: "Error"}
+    end
+
+  end
+
   def create
     @meeting_range = MeetingRange.create(meeting_range_params)
 
@@ -27,6 +38,6 @@ class MeetingRangesController < ApplicationController
   private
 
   def meeting_range_params
-    params.require(:meeting_range).permit(:begin_date, :end_date, :cut_off_early, :cut_off_late, :interval, :end_poll)
+    params.require(:meeting_range).permit(:begin_date, :end_date, :cut_off_early, :cut_off_late, :interval, :end_poll, :final_time)
   end
 end

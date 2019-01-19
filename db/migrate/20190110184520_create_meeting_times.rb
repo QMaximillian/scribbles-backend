@@ -3,7 +3,7 @@ class CreateMeetingTimes < ActiveRecord::Migration[5.2]
     create_table :meeting_times do |t|
       t.integer :meeting_range_id, optional: true
       t.integer :user_id, optional: true
-      t.date :day
+      t.datetime :day
       t.datetime :begin_time
       t.datetime :end_time
       t.boolean :affirmative, optional: true
