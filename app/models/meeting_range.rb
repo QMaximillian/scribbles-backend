@@ -1,4 +1,4 @@
 class MeetingRange < ApplicationRecord
+  belongs_to :date_range
   has_many :meeting_times
-  has_many :users
 end

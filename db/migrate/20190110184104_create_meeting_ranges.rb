@@ -8,7 +8,6 @@ class CreateMeetingRanges < ActiveRecord::Migration[5.2]
       t.time :cut_off_late
       t.integer :interval
       t.datetime :final_time
-
       t.timestamps
     end
   end
