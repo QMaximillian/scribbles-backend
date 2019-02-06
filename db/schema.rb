@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_175913) do
   create_table "meeting_times", force: :cascade do |t|
     t.integer "meeting_range_id"
     t.integer "user_id"
-    t.date "day"
+    t.datetime "day"
     t.datetime "begin_time"
     t.datetime "end_time"
     t.boolean "affirmative"
