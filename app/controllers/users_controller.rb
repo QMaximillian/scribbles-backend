@@ -13,13 +13,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    render json: @user.format, status: :ok
+    render json: @user, status: :ok
   end
   #
   # # POST /users
   def create
-    @user = User.new(user_params)
-    byebug
+    @user = User.create(user_params)
     if @user.valid?
 
       render json: @user, status: :created
