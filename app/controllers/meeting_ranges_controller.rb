@@ -9,7 +9,10 @@ class MeetingRangesController < ApplicationController
   def show
     @meeting_range = MeetingRange.find(params[:id])
 
-    render json: {meeting_range: @meeting_range, meeting_time: @meeting_range.meeting_times, user_ids: @meeting_range.users.ids, users: @meeting_range.users}
+    render json: {
+      meeting_range: @meeting_range, meeting_time: @meeting_range.meeting_times, user_ids: @meeting_range.users.ids,
+      users: @meeting_range.users
+    }
   end
 
   def update
