@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :meeting_times
 
   def format
-    {users: [self], meeting_times: self.meeting_times}
+    {users: self, meeting_times: self.meeting_times}
   end
 
 end

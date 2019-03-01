@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   #
   # # POST /users
   def create
-    byebug
+
     @user = User.create(user_params)
 
     if @user.valid?
